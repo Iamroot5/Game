@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dynamic Text Update</title>
+    <fieldset style="border-radius:5px;background-color:lightblue">
+    <script>
+        function updateText() {
+            var words = ["what is biome", "Name 5 The Big Five", "Name 5 goat breed", "what do we call goat meat", "I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?", "You see me once in June, twice in November, and not at all in any other month. What am I?", ". I am an odd number. Take away a letter and I become even. What number am I?","What has a mouth but can't eat, runs but can't walk, and has a bank but can't save money?","What belongs to you but is used more by others?","What is always coming but never arrives?","What can you hold in your right hand, but never in your left hand?","I follow you all the time and copy your every move. But you can't touch me or catch me. What am I?"];
+            
+            var randomIndex = Math.floor(Math.random() * words.length);
+            var randomWord = words[randomIndex];
+            document.getElementById("text").innerHTML = randomWord;
+        }
+
+        setInterval(updateText, 20000); // Call the function every 10 seconds
+    </script>
+</head>
+<body>
+    <div id="text"> What is it that you can keep after giving it to someone else?</div>
+</body>
+<button>Blue<button>
+  <a href="">answer</a>
+<button>Red</button>
+<style>
+  button{
+    height:50px;
+    width:150px;
+  }
+body {
+ margin: 0;
+ height: 100vh;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background: #212121;
+}
+
+nav ul {
+ list-style-type: none;
+ padding: 0;
+ 
+}
+
+button {
+ font-size: 40px;
+ font-family: sans-serif;
+ background-color: transparent;
+ border: 1px solid #00dcdc;
+ letter-spacing: 0.1em;
+ width: 7em;
+ height: 1.5em;
+ line-height: 1.5em;
+ position: relative;
+ overflow: hidden;
+ margin: 0.5em;
+ cursor: pointer; 
+ text-align: center;   
+ border-radius: 20px 10px 150px 10px;
+}
+
+button {
+ color: white;
+ mix-blend-mode: difference; 
+}
+
+button::before {
+ border: 1px solid #00ffff;
+ content: '';
+ position: absolute;
+ width: 1em;
+ height: inherit;
+ background-color:  rgba(0, 190, 190, 0.2);
+ /* border-radius: 50%; */
+ top: 0;
+ left: -1.5em;
+ transition: 0.9s ease-in-out; 
+}
+
+button:hover::before {
+ transform: scale(16); 
+}
+
+button:hover {
+ box-shadow: 0 0 20px #00dcdc;
+}
+</style>
